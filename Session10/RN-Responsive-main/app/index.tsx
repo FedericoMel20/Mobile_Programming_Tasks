@@ -72,22 +72,18 @@ export default function HomeScreen() {
 
   // responsive scale factor based on smaller screen dimension
   const base = Math.min(width, height);
-  const scale = base / 375; // 375px typical mobile baseline
+  const scale = base / 375; 
 
   // icon sizing — scale dynamically and tune per device class
   const iconSize = Math.round(
     22 * scale * (isLargeTablet ? 1.8 : isTablet ? 1.3 : 1)
   );
 
-  // card width logic:
-  // mobile -> 100%
-  // tablet portrait or narrow -> 48% (two columns)
-  // large-tablet -> 32% (three columns)
-  // if tablet + landscape -> use more compact widths
+ 
   const cardWidthStyle = isLargeTablet
-    ? { width: "31%" } // three columns with small gaps
+    ? { width: "31%" } 
     : isTablet && isLandscape
-    ? { width: "48%" } // keep two columns on tablet landscape
+    ? { width: "48%" } 
     : isTablet
     ? { width: "48%" }
     : { width: "100%" };
